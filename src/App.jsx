@@ -1,22 +1,14 @@
 import { useState } from 'react'
-import './App.css'
+import { useEffect } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0);
-function Add(){
-  setCount((count) =>{ 
-      return(
-      count = count+1
-      );
-    }
+function App(){
+  const [count ,setCount] =useState(0);
+  useEffect(() =>{
+    setCount(10);
+  },[])
+  console.log(count)
+  return(
+    <h1>{count}</h1>
   );
 }
-  return (
-    <>
-      <h1>{count}</h1>
-      <button type="button" onClick={Add}>Add</button>
-    </>
-  );
-}
-
 export default App;
